@@ -405,6 +405,12 @@ public class BrowserUtils {
         }
         return true;
     }
+
+    public static void clickElement(WebElement element){
+        waitForVisibility(element,10);
+        waitFor(1);
+        element.click();
+    }
 }
 
 

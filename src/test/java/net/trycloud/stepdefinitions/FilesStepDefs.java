@@ -2,6 +2,7 @@ package net.trycloud.stepdefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.trycloud.pages.DashboardPage;
 import net.trycloud.pages.FilesPage;
 import net.trycloud.utilities.BrowserUtils;
 import net.trycloud.utilities.Driver;
@@ -9,8 +10,14 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 public class FilesStepDefs {
+
+    @When("user clicks {string} module")
+    public void user_clicks_module(String moduleName) {
+        new DashboardPage().clickModulesWithText(moduleName);
+    }
     @When("the user clicks on an existing file's add to favorites under its own three dots menu")
     public void the_user_clicks_on_an_existing_file_s_add_to_favorites_under_its_own_three_dots_menu() {
+
         FilesPage filesPage = new FilesPage();
         filesPage.filesThreeDotMenu.click();
         filesPage.addToFavorites.click();

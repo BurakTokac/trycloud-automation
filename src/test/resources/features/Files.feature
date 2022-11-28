@@ -3,6 +3,7 @@ Feature: Files Functionalities
 
   Background:
     Given the user is logged in
+    When user clicks "Files" module
 @TRYCLOUD-451 @smoke
   Scenario: User can add any file to favorites from its own three dots menu
     When the user clicks on an existing file's add to favorites under its own three dots menu
